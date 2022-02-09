@@ -104,7 +104,7 @@ function checkParams(params) {
 
     if(params.interval === undefined || params.interval === ""){
         console.log("[WARNING] No interval defined in params.json, defaulting to 30 minutes");
-        params.interval = 30;
+        params.interval = .5;
     }
 }
 

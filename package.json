@@ -1,0 +1,20 @@
+{
+  "name": "github-backup-script",
+  "version": "1.0.0",
+  "description": "basic script that makes a backup of the github repositories locally,",
+  "main": "service.js",
+  "scripts": {
+    "start": "node service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akrck02/Github-backup-script.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akrck02/Github-backup-script/issues"
+  },
+  "homepage": "https://github.com/akrck02/Github-backup-script#readme"
+}

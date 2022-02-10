@@ -4,7 +4,6 @@ import { Configuration } from "./configuration";
 
 const fs = require('fs');
 
-
 export class Service {
 
     private cloned : number;
@@ -28,7 +27,7 @@ export class Service {
             this.params = Configuration.ReadParamsFile();
             this.checkParams();
 
-            Commands.MakeDirectory(this.params.directory ?? "~/backup");
+            Commands.MakeDirectory(this.params.directory || "~/backup");
             this.repos = Configuration.ReadReposFile();
         } catch (e) {
             console.log(e);

@@ -1,8 +1,20 @@
-$CURRENT_DATE = `date`
-echo Starting github-backup service. $CURRENT_DATE
+#!/bin/sh
+echo Starting github-backup service. 
+date -I
 
+echo --------------------------------------------------------------
+echo "   Updating npm packages"
+echo --------------------------------------------------------------
 npm i
+
+echo --------------------------------------------------------------
+echo "   Compiling typescript code" 
+echo --------------------------------------------------------------
 npm run compile
+
+echo --------------------------------------------------------------
+echo "   Starting backup service"
+echo --------------------------------------------------------------
 npm run start 
 
 echo service finished.

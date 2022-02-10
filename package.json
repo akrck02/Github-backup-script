@@ -4,7 +4,9 @@
   "description": "basic script that makes a backup of the github repositories locally,",
   "main": "service.js",
   "scripts": {
-    "start": "node service.js"
+    "start": "node ./out/service.js",
+    "compile": "tsc",
+    "compile-watch": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/akrck02/Github-backup-script/issues"
   },
-  "homepage": "https://github.com/akrck02/Github-backup-script#readme"
+  "homepage": "https://github.com/akrck02/Github-backup-script#readme",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.17"
+  }
 }

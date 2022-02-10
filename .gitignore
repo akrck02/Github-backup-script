@@ -1,1 +1,3 @@
-/media/**
+/media/
+/node_modules/
+/out/

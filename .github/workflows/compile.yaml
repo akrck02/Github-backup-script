@@ -1,0 +1,31 @@
+name: Stable release
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v3
+      with:
+        go-version: '>=1.17.0'
+    - run: go version
+
+    - name: Compile 
+      run: |
+        cd backup
+        go build
+        cd ../data
+        go build
+
+    - name: Create a Release of commit
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: ${{ github.token }}
+        automatic_release_tag: latest
+        prerelease: false
+        title: Github-backup-script
+        files: |
+          backup/github-backup-script
+          data/github-data-fetch

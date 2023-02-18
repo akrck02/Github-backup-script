@@ -27,4 +27,5 @@ jobs:
         prerelease: false
         title: Github-backup-script
         files: |
-          data/Github-backup-script
+          backup/github-backup-script
+          data/github-data-fetch

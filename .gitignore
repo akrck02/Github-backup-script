@@ -1,3 +1,6 @@
 
 data/Resources
 backup/Resources
+
+data/github-data-fetch
+backup/github-backup-script

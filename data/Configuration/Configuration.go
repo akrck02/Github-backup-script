@@ -1,15 +1,16 @@
 package Configuration
 
 import (
+	"os"
+
 	"github.com/akrck02/github-data-fetch/Logger"
 	"github.com/joho/godotenv"
-	"os"
 )
 
 type Configuration struct {
-	Username   string
-	Token      string
-	BackupPath string
+	Username string
+	Token    string
+	JsonPath string
 }
 
 func LoadConfiguration() Configuration {
@@ -23,26 +24,21 @@ func LoadConfiguration() Configuration {
 	checkCompulsoryParameters()
 
 	return Configuration{
-		Username:   os.Getenv("username"),
-		Token:      os.Getenv("token"),
-		BackupPath: os.Getenv("backup.path"),
+		Username: os.Getenv("github.fetch.username"),
+		Token:    os.Getenv("github.fetch.token"),
+		JsonPath: os.Getenv("github.json.path"),
 	}
 }
 
 func checkCompulsoryParameters() {
 
-	if os.Getenv("username") == "" {
+	if os.Getenv("github.fetch.username") == "" {
 		Logger.Error("No Username defined")
 		os.Exit(1)
 	}
 
-	if os.Getenv("token") == "" {
-		Logger.Error("No Token defined")
-		os.Exit(1)
-	}
-
-	if os.Getenv("backup.path") == "" {
-		Logger.Error("No Backup path defined")
+	if os.Getenv("github.json.path") == "" {
+		Logger.Error("No JSON path defined")
 		os.Exit(1)
 	}
 

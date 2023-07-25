@@ -2,10 +2,11 @@ package Github
 
 import (
 	"encoding/json"
-	"github.com/akrck02/github-data-fetch/Logger"
 	"io"
 	"net/http"
 	"strconv"
+
+	"github.com/akrck02/github-data-fetch/Logger"
 )
 
 type Repository struct {
@@ -27,7 +28,10 @@ func GetUserRepositories(user string, token string) []string {
 
 		client := &http.Client{}
 		req, _ := http.NewRequest("GET", requestURL, nil)
-		req.Header.Set("Authorization", "Bearer "+token)
+
+		if token != "" {
+			req.Header.Set("Authorization", "Bearer "+token)
+		}
 		resp, err := client.Do(req)
 
 		if err != nil {

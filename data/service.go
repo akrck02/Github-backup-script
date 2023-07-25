@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
+	"os"
+	"strings"
+
 	"github.com/akrck02/github-data-fetch/Configuration"
 	"github.com/akrck02/github-data-fetch/Github"
 	"github.com/akrck02/github-data-fetch/Logger"
-	"os"
-	"strings"
 )
 
 type GitFile struct {
@@ -20,7 +21,7 @@ func main() {
 	var configuration = Configuration.LoadConfiguration()
 	Logger.Log("Username: " + configuration.Username)
 	Logger.Log("Token: " + configuration.Token)
-	Logger.Log("Backup path: " + configuration.BackupPath)
+	Logger.Log("Json path: " + configuration.JsonPath)
 
 	var usernames = strings.Split(configuration.Username, ",")
 	var gitFiles = []GitFile{}
@@ -42,7 +43,7 @@ func main() {
 	}
 
 	json, _ := json.Marshal(gitFiles)
-	_ = os.WriteFile(configuration.BackupPath+"/git.json", json, 0644)
+	_ = os.WriteFile(configuration.JsonPath+"/git.json", json, 0644)
 
 	Logger.Title("Finished")
 }

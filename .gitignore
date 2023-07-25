@@ -4,3 +4,4 @@ backup/Resources
 
 data/github-data-fetch
 backup/github-backup-script
+docker/.env

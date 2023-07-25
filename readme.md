@@ -14,12 +14,11 @@ This script will backup your public github repositories to a local directory.
 
 In the `.env` file, you must place your github username and `the path to the backup directory`.
 
-The `token is optional`, just leave with "-" if you don't want to use it.
+The `token is optional`, just leave with "" if you don't want to use it.
 
 ```.env
-username=github_username
-token=github_token
-backup.path=/your/backup/directory
+github.backup.token=github_token
+github.backup.path=/your/backup/directory
 ```
 
 The `git.json` file is used tell the script which repositories you want to backup.
@@ -63,19 +62,19 @@ and create the `git.json` file for you.
 `Download the script` and place it in a `directory of your choice` and create the following directory:
 
     /path/to/script
-    ├── github-backup-script
+    ├── github-data-fetch
     └── Resources 
         └── .env
 
 In the `.env` file, you must place the `usernames of the accounts you want to backup`.
 
-The `token is not necessary`, just leave with "-".
+The `token is not necessary`, just leave with "".
 
 
 ```.env
-username=akrck02,torvalds
-token=-
-backup.path=/place/for/git.json/file
+github.fetch.usernames=akrck02,torvalds
+github.fetch.token=-
+github.fetch.json.path=/place/for/git.json/file
 ```
 
 Make the script executable Then, run it:

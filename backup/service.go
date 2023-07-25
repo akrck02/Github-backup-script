@@ -1,13 +1,14 @@
 package main
 
 import (
+	"time"
+
 	"github.com/akrck02/github-backup-script/Configuration"
 	"github.com/akrck02/github-backup-script/Core"
 	"github.com/akrck02/github-backup-script/Logger"
 	"github.com/akrck02/github-backup-script/Messages"
 	"github.com/akrck02/github-backup-script/Service"
 	"github.com/akrck02/github-backup-script/Util"
-	"time"
 )
 
 func main() {
@@ -37,7 +38,6 @@ func main() {
 }
 
 func logConfiguration(configuration Configuration.Configuration) {
-	Logger.FormattedInfo(Messages.USERNAMES, configuration.Username)
 	Logger.FormattedInfo(Messages.TOKEN, configuration.Token)
 	Logger.FormattedInfo(Messages.BACKUP_PATH, configuration.BackupPath)
 }

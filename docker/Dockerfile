@@ -9,12 +9,11 @@ LABEL description="This is a custom Docker image for ServerDashboard application
 # Environment variables
 ENV GITHUB_REFRESH_INTERVAL 60
 
-ENV GITHUB_BACKUP_USER ""
-ENV GITHUB_BACKUP_TOKEN "-"
+ENV GITHUB_BACKUP_TOKEN ""
 ENV GITHUB_BACKUP_PATH "/app/backup"
 
 ENV GITHUB_FETCH_USERNAMES ""
-ENV GITHUB_FETCH_TOKEN "-"
+ENV GITHUB_FETCH_TOKEN ""
 ENV GITHUB_FETCH_JSON_PATH "./backup/Resources/"
 
 # Disable Prompt During Packages Installation

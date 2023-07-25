@@ -13,6 +13,10 @@ type Configuration struct {
 	JsonPath string
 }
 
+const USERNAMES = "github.fetch.usernames"
+const TOKEN = "github.fetch.token"
+const JSON_PATH = "github.json.path"
+
 func LoadConfiguration() Configuration {
 	err := godotenv.Load("./Resources/.env")
 
@@ -24,20 +28,20 @@ func LoadConfiguration() Configuration {
 	checkCompulsoryParameters()
 
 	return Configuration{
-		Username: os.Getenv("github.fetch.username"),
-		Token:    os.Getenv("github.fetch.token"),
-		JsonPath: os.Getenv("github.json.path"),
+		Username: os.Getenv(USERNAMES),
+		Token:    os.Getenv(TOKEN),
+		JsonPath: os.Getenv(JSON_PATH),
 	}
 }
 
 func checkCompulsoryParameters() {
 
-	if os.Getenv("github.fetch.username") == "" {
+	if os.Getenv(USERNAMES) == "" {
 		Logger.Error("No Username defined")
 		os.Exit(1)
 	}
 
-	if os.Getenv("github.json.path") == "" {
+	if os.Getenv(JSON_PATH) == "" {
 		Logger.Error("No JSON path defined")
 		os.Exit(1)
 	}

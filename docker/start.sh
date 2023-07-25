@@ -40,7 +40,6 @@ echo "github.fetch.usernames=$GITHUB_FETCH_USERNAMES"  >> /app/Github-backup-scr
 echo "github.fetch.token=$GITHUB_FETCH_TOKEN"          >> /app/Github-backup-script/bin/data/Resources/.env
 echo "github.fetch.json.path=$GITHUB_FETCH_JSON_PATH"  >> /app/Github-backup-script/bin/data/Resources/.env
 
-echo "github.backup.username=$GITHUB_BACKUP_USER"      >> /app/Github-backup-script/bin/backup/Resources/.env
 echo "github.backup.token=$GITHUB_BACKUP_TOKEN"        >> /app/Github-backup-script/bin/backup/Resources/.env
 echo "github.backup.path=$GITHUB_BACKUP_PATH"          >> /app/Github-backup-script/bin/backup/Resources/.env
 

@@ -15,7 +15,7 @@ type Configuration struct {
 
 const USERNAMES = "github.fetch.usernames"
 const TOKEN = "github.fetch.token"
-const JSON_PATH = "github.json.path"
+const JSON_PATH = "github.fetch.json.path"
 
 func LoadConfiguration() Configuration {
 	err := godotenv.Load("./Resources/.env")

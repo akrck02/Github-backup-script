@@ -17,7 +17,7 @@ In the `.env` file, you must place your github username and `the path to the bac
 The `token is optional`, just leave with "" if you don't want to use it.
 
 ```.env
-github.backup.token=github_token
+github.backup.token=****************
 github.backup.path=/your/backup/directory
 ```
 
@@ -73,7 +73,7 @@ The `token is not necessary`, just leave with "".
 
 ```.env
 github.fetch.usernames=akrck02,torvalds
-github.fetch.token=-
+github.fetch.token=****************
 github.fetch.json.path=/place/for/git.json/file
 ```
 
